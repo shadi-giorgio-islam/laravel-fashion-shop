@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Dress;
 
 class HomeController extends Controller
 {
@@ -10,6 +11,8 @@ class HomeController extends Controller
     return view('home');
   }
   public function shop(){
+    $dati = Dress::all();
+    dd($dati);
     return view('shop');
   }
   public function about(){
