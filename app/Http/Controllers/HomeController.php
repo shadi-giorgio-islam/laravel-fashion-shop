@@ -11,9 +11,11 @@ class HomeController extends Controller
     return view('home');
   }
   public function shop(){
-    $dati = Dress::all();
-    dd($dati);
-    return view('shop');
+    $dati_dresses = Dress::all();
+    $data = [
+      'dresses' => $dati_dresses
+    ];
+    return view('shop', $data);
   }
   public function about(){
     return view('about');
